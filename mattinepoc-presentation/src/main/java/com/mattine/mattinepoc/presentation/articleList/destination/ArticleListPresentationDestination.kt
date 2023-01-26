@@ -1,0 +1,5 @@
+package com.mattine.mattinepoc.presentation.articleList.destination
+
+import com.mattine.mattinepoc.presentation.architecture.mdoel.PresentationDestination
+
+sealed class ArticleListPresentationDestination : PresentationDestination
