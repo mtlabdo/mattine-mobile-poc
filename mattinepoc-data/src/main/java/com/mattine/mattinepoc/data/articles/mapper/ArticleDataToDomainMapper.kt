@@ -13,7 +13,7 @@ class ArticleDataToDomainMapper {
         qteMax = input.qteMax,
         qteMin = input.qteMin,
         prixVente = input.prixVente,
-        image = input.image,
+        image = input.image.toString(),
         etat = input.etat,
     )
 }

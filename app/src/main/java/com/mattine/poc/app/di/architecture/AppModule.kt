@@ -1,4 +1,4 @@
-package com.mattine.poc.app.di
+package com.mattine.poc.app.di.architecture
 
 import android.app.Application
 import android.content.res.Resources

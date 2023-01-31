@@ -1,9 +1,7 @@
-package com.mattine.poc.app.di
+package com.mattine.poc.app.di.architecture
 
 import android.content.Context
-import com.mattine.mattinepoc.datasource.retrofit.ApiService
-import com.mattine.mattinepoc.datasource.retrofit.RetrofitClient
-import com.mattine.mattinepoc.datasource.retrofit.SafeHttpClient
+import com.mattine.mattinepoc.datasource.network.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,7 +20,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun providesOkHttpClient(safeHttpClient: SafeHttpClient): OkHttpClient =
+    fun providesOkHttpClient(safeHttpClient: SafeHttpClient) =
         safeHttpClient.createOkHttpClient()
 
 
@@ -31,11 +29,11 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun providesRetrofit(retrofitClient: RetrofitClient): Retrofit =
+    fun providesRetrofit(retrofitClient: RetrofitClient) =
         retrofitClient.createRetrofit()
-/*
+
     @Provides
     @Singleton
     fun providesApiService(retrofit: Retrofit): ApiService =
-        ApiService(retrofit)*/
+        ApiService(retrofit)
 }

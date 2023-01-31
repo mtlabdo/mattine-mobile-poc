@@ -8,6 +8,6 @@ data class ArticleDataModel(
     val qteMax: Double?,
     val qteMin: Double?,
     val prixVente: Double?,
-    val image: String?,
+    val image: Any?,
     val etat: Boolean?,
 )

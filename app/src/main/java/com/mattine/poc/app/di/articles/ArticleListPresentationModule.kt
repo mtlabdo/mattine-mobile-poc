@@ -1,4 +1,4 @@
-package com.mattine.poc.app.di
+package com.mattine.poc.app.di.articles
 
 import com.mattine.mattinepoc.domain.cleanarchitecture.articles.repository.ArticleListRepository
 import com.mattine.mattinepoc.domain.cleanarchitecture.articles.usecase.GetArticleListUseCase

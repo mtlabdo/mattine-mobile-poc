@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.mattine.mattinepoc.ui.articleList.model.ArticleUiModel
 import com.mattine.poc.ui.R
 
-class ArticleListAdapter : Adapter<ArticleListAdapter.ArticleViewHolder>() {
+class ArticleListAdapter() : Adapter<ArticleListAdapter.ArticleViewHolder>() {
     var onArticleClickListener: OnClickListener = OnClickListener.DoNothing
 
     private val delegateOnClickListener = DelegateOnClickListener()

@@ -1,4 +1,4 @@
-package com.mattine.poc.app.di
+package com.mattine.poc.app.di.articles
 
 import androidx.fragment.app.Fragment
 import com.mattine.mattinepoc.presentation.articleList.model.ArticleListViewState

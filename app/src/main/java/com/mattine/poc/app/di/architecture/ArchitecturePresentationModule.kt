@@ -1,4 +1,4 @@
-package com.mattine.poc.app.di
+package com.mattine.poc.app.di.architecture
 
 import com.mattine.mattinepoc.domain.cleanarchitecture.coroutine.CoroutineContextProvider
 import com.mattine.mattinepoc.domain.cleanarchitecture.usecase.UseCaseExecutor

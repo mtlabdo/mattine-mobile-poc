@@ -1,5 +1,6 @@
 package com.mattine.mattinepoc.datasource.articles.model
 
+import android.graphics.Bitmap
 import com.google.gson.annotations.SerializedName
 
 data class ArticleNetworkModel(
@@ -25,8 +26,8 @@ data class ArticleNetworkModel(
     @SerializedName("PrixVente")
     val prixVente: Double?,
 
-    @SerializedName("Image")
-    val image: String?,
+    @SerializedName("ImageAndroid")
+    val image: Any?,
 
     @SerializedName("Etat")
     val etat: Boolean?,

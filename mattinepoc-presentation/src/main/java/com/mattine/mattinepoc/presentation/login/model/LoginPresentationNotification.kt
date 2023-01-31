@@ -1,0 +1,3 @@
+package com.mattine.mattinepoc.presentation.login.model
+
+class LoginPresentationNotification

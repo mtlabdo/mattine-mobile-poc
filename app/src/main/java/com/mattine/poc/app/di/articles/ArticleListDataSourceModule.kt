@@ -1,15 +1,14 @@
-package com.mattine.poc.app.di
+package com.mattine.poc.app.di.articles
 
 import com.mattine.mattinepoc.data.articles.datasource.ArticleListDataSource
 import com.mattine.mattinepoc.datasource.articles.datasource.ArticleListLiveDataSource
 import com.mattine.mattinepoc.datasource.articles.mapper.ArticleNetworkToDataModelMapper
 import com.mattine.mattinepoc.datasource.articles.network.ArticleApi
-import com.mattine.mattinepoc.datasource.retrofit.ApiService
+import com.mattine.mattinepoc.datasource.network.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.OkHttpClient
 import javax.inject.Singleton
 
 @Module
@@ -25,20 +24,13 @@ class ArticleListDataSourceModule {
     fun providesArticleApi(apiService: ApiService): ArticleApi =
         apiService.getApiService<ArticleApi>()
 
-/*    @Provides
+    @Provides
     @Singleton
     fun providesArticleListLiveDataSource(
         articleNetworkToDataModelMapper: ArticleNetworkToDataModelMapper,
         articleApi: ArticleApi
     ): ArticleListDataSource =
         ArticleListLiveDataSource(articleNetworkToDataModelMapper, articleApi)
-    */
 
-    @Provides
-    @Singleton
-    fun providesArticleListLiveDataSource(
-        articleNetworkToDataModelMapper: ArticleNetworkToDataModelMapper, okHttpClient: OkHttpClient
-    ): ArticleListDataSource =
-        ArticleListLiveDataSource(articleNetworkToDataModelMapper, okHttpClient)
 
 }

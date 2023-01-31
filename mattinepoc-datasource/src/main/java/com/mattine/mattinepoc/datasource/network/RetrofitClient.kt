@@ -1,6 +1,6 @@
-package com.mattine.mattinepoc.datasource.retrofit
+package com.mattine.mattinepoc.datasource.network
 
-import com.mattine.mattinepoc.datasource.retrofit.config.ApiConfig
+import com.mattine.mattinepoc.datasource.network.config.ApiConfig
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -17,4 +17,5 @@ class RetrofitClient(
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
 }

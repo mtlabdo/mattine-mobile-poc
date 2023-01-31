@@ -1,7 +1,6 @@
-package com.mattine.mattinepoc.datasource.retrofit
+package com.mattine.mattinepoc.datasource.network
 
 import android.content.Context
-import android.util.Log
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

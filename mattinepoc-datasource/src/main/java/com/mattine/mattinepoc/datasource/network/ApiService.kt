@@ -1,4 +1,4 @@
-package com.mattine.mattinepoc.datasource.retrofit
+package com.mattine.mattinepoc.datasource.network
 
 import retrofit2.Retrofit
 

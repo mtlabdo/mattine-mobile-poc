@@ -1,4 +1,4 @@
-package com.mattine.poc.app.di
+package com.mattine.poc.app.di.articles
 
 import com.mattine.mattinepoc.data.articles.datasource.ArticleListDataSource
 import com.mattine.mattinepoc.data.articles.mapper.ArticleDataToDomainMapper
