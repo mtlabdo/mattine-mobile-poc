@@ -6,5 +6,5 @@ import com.mattine.mattinepoc.ui.login.view.LoginViewsProvider
 
 class LoginViewStateBinder : ViewStateBinder<LoginViewState, LoginViewsProvider> {
 
-    override fun LoginViewsProvider.bindState(viewState: LoginViewState) {  }
+    override fun LoginViewsProvider.bindState(viewState: LoginViewState) = Unit
 }

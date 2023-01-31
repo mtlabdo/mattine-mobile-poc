@@ -1,12 +1,10 @@
 package com.mattine.mattinepoc.ui.architecture.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import com.mattine.mattinepoc.presentation.architecture.mdoel.PresentationDestination
 import com.mattine.mattinepoc.presentation.architecture.viewmodel.BaseViewModel
 import com.mattine.mattinepoc.ui.architecture.mapper.NotificationPresentationToUiMapper
@@ -45,20 +43,14 @@ abstract class BaseFragment<VIEW_STATE : Any, NOTIFICATION : Any> : Fragment(), 
     abstract fun View.bindViews()
 
     private fun observeViewModel() {
-        //viewModel.viewState.observe(viewLifecycleOwner, ::applyViewState)
-        //viewModel.notification.observe(viewLifecycleOwner, ::showNotification)
-        viewModel.destination.observe(viewLifecycleOwner, Observer {
-            try {
-                destinationMapper.toUi(it).navigate()
-
-            }catch (e:Exception)
-            Log.d("ef","dvsd")
-        })
+        viewModel.viewState.observe(viewLifecycleOwner, ::applyViewState)
+        viewModel.notification.observe(viewLifecycleOwner, ::showNotification)
+        viewModel.destination.observe(viewLifecycleOwner, ::navigateToDestination)
     }
 
     private fun applyViewState(viewState: VIEW_STATE) {
         with(viewStateBinder) {
-            //bindState(viewState = viewState)
+            bindState(viewState = viewState)
         }
     }
 
