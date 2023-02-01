@@ -6,5 +6,5 @@ import com.mattine.mattinepoc.ui.architecture.view.ViewsProvider
 
 interface LoginViewsProvider : ViewsProvider {
     val passwordField: TextView
-    val submitLoginButton: View
+    val progressView: View
 }

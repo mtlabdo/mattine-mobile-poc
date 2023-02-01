@@ -1,11 +1,14 @@
 package com.mattine.mattinepoc.ui.login.view
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
-import android.widget.TextView
 import com.mattine.mattinepoc.presentation.login.model.LoginPresentationNotification
 import com.mattine.mattinepoc.presentation.login.model.LoginViewState
 import com.mattine.mattinepoc.presentation.login.viewModel.LoginViewModel
@@ -37,14 +40,13 @@ class LoginFragment : BaseFragment<LoginViewState, LoginPresentationNotification
 
     override val layoutResourceId = R.layout.layout_login
 
-    override lateinit var passwordField: TextView
+    override lateinit var passwordField: EditText
 
-    override lateinit var submitLoginButton: View
-
+    override lateinit var progressView: View
 
     override fun View.bindViews() {
         passwordField = findViewById(R.id.passwordField)
-        submitLoginButton = findViewById(R.id.submitLogin)
+        progressView = findViewById(R.id.progressView)
     }
 
     override fun onCreateView(
@@ -53,15 +55,34 @@ class LoginFragment : BaseFragment<LoginViewState, LoginPresentationNotification
         savedInstanceState: Bundle?
     ): View? {
         val view = super.onCreateView(inflater, container, savedInstanceState)
-        submitLoginButton.setOnClickListener {
+
+        passwordField.onDone {
             val password = passwordField.text.toString()
             viewModel.onLogin(password)
         }
+
+        showKeyboard()
         return view
     }
 
-    companion object {
+    private fun showKeyboard() {
+        passwordField.requestFocus()
+        val imm: InputMethodManager =
+            activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.showSoftInput(passwordField, 0)
+        activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
+    }
 
+    fun EditText.onDone(callback: () -> Unit) {
+        setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                callback.invoke()
+            }
+            false
+        }
+    }
+
+    companion object {
         fun newInstance(): LoginFragment {
             return LoginFragment()
         }

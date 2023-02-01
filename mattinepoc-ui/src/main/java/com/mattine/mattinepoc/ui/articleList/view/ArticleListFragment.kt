@@ -4,13 +4,14 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
 import com.mattine.mattinepoc.presentation.articleList.model.ArticleListViewState
-import com.mattine.mattinepoc.ui.architecture.view.BaseFragment
 import com.mattine.mattinepoc.ui.articleList.bidner.ArticleListViewStateBinder
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.mattine.mattinepoc.presentation.articleList.model.ArticleListPresentationNotification
 import com.mattine.mattinepoc.presentation.articleList.viewModel.ArticleListViewModel
 import com.mattine.mattinepoc.ui.architecture.mapper.ViewStateBinder
+import com.mattine.mattinepoc.ui.architecture.view.BaseFragment
+import com.mattine.mattinepoc.ui.architecture.view.BottomDialogFragment
 import com.mattine.mattinepoc.ui.architecture.view.ViewsProvider
 import com.mattine.mattinepoc.ui.articleList.mapper.ArticleDestinationToUiMapper
 import com.mattine.mattinepoc.ui.articleList.mapper.ArticleListNotificationPresentationToUiMapper
